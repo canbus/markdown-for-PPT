@@ -31,12 +31,101 @@ section::after {
 
 <!-- headingDivider: 2 -->  
 
-# 字体
-`> 这里是引用` > 这里是引用 
+# md语法
+## 插入换行
+行尾两空格  
+保持换行
 
-`**粗体**` **粗体**  
-`*斜体*`   *斜体*
-`~~删除线~~` ~~删除线~~
+## 段落缩进
+邮件体段落缩进：
+
+> 第一级段落缩进。
+>
+> > 第二级段落缩进。
+>
+> 返回一级段落缩进。
+
+## 代码块
+```ruby
+require 'redcarpet'
+md = Redcarpet.new("Hello, world.")
+puts md.to_html
+```
+## 无序列表
+* 星号、减号、加号开始列表。
+  - 列表层级和缩进有关。
+    + 和具体符号无关。
+* 返回一级列表。
+## 有序列表
+1. 数字和点开始有序列表。
+
+  1. 注意子列表的缩进位置。
+
+      1. 三级列表。
+      1. 编号会自动更正。
+
+  1. 二级列表，编号自动更正为2。
+
+1. 返回一级列表。
+## 分隔线
+三条或更多短线（或星号、下划线）\显示为分隔线。  
+---  
+***  
+___ 
+## 粗体和斜体
+这些都是 **粗体** 或 __粗体__   
+这些都是 *斜体* 或 _斜体_ 。
+## 删除线
+~~删除线~~ 效果
+## 下划线
+<u>下划线</u> 效果
+
+## 上标、下标
+Water: H<sub>2</sub>O
+E = mc<sup>2</sup>  
+注解：通过直接嵌入HTML代码实现。
+
+## 等宽字体
+行内反引号嵌入代码，如: `git status` 。
+
+## URL自动链接
+网址 http://github.com/  
+邮件 me@foo.bar
+## 文字链接
+- 访问 [Google](http://google.com/)。
+- 上面已定义，直接引用[google](#Google) 链接。
+- 链接地址在后面定义，如： [GitHub][1] 。
+- 反引号括起多个单词的链接。如 [my blog][] 。
+
+[1]: http://github.com
+[my blog]: http://www.worldhello.ne
+
+## 内部跳转
+a name="fig1" id="fig1"></a>
+![](https://longzeping.github.io/img/apple-touch-icon.png)
+    内部跳转图例
+
+上面定义的位置，可以：
+
+- 通过 [fig1](#fig1) 跳转。
+- 或者 [点击这里](#fig1) 跳转。
+- 或者参见 [内部跳转图例](#fig1) 。
+
+## 图片
+![](https://longzeping.github.io/img/apple-touch-icon.png)
+    图：GitHub logo
+
+GitHub Logo:![logo]
+
+带链接的图片：
+[![][logo]](https://github.com/)
+    
+下图向右浮动：
+![](https://longzeping.github.io/img/apple-touch-icon.png)
+
+[logo]: https://longzeping.github.io/img/apple-touch-icon.png "Logo"
+
+
 
 # 表格
 ```
